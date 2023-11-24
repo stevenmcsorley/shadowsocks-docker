@@ -1,12 +1,11 @@
-version: '3'
+version: '3.3'
 
 services:
-  shadowsocks:
-    image: shadowsocks/shadowsocks-libev
+  shadowsocks-rust:
+    image: teddysun/shadowsocks-rust
     ports:
-      - "8388:8388"
-      - "8388:8388/udp"
-    environment:
-      - METHOD=aes-256-gcm
-      - PASSWORD=yourpassword
+      - "25117:25117"
+      - "25117:25117/udp"
+    volumes:
+      - ./etc/shadowsocks-rust/config.json:/etc/shadowsocks-rust/config.json
     restart: always

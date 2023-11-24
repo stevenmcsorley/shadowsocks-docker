@@ -4,8 +4,8 @@ services:
   shadowsocks-rust:
     image: teddysun/shadowsocks-rust
     ports:
-      - "25117:25117"
-      - "25117:25117/udp"
+      - "8379:8379"
+      - "8379:8379/udp"
     volumes:
       - ./etc/shadowsocks-rust/config.json:/etc/shadowsocks-rust/config.json
     restart: always
